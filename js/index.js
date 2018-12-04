@@ -1,60 +1,5 @@
 'use strict';
 
-// function playOneMinute() {
-//     let beep = document.getElementById('myBeep');
-//     let oneMinuteAudio = document.getElementById('1minute');
-//     beep.play();
-//     oneMinuteAudio.play();
-// }
-
-// function playFiveMinute() {
-//     let beep = document.getElementById('myBeep');
-//     let fiveMinuteAudio = document.getElementById('5minute');
-//     beep.play();
-//     fiveMinuteAudio.play();
-// }
-
-// function playTenMinute() {
-//     let beep = document.getElementById('myBeep');
-//     let tenMinuteAudio = document.getElementById('10minute');
-//     beep.play();
-//     tenMinuteAudio.play();
-// }
-
-// function playFifteenMinute() {
-//     let beep = document.getElementById('myBeep');
-//     let fifteenMinuteAudio = document.getElementById('15minute');
-//     beep.play();
-//     fifteenMinuteAudio.play();
-// }
-
-// function playThirtyMinute() {
-//     let beep = document.getElementById('myBeep');
-//     let thirtyMinuteAudio = document.getElementById('30minute');
-//     beep.play();
-//     thirtyMinuteAudio.play();
-// }
-
-// function playSixtyMinute() {
-//     let beep = document.getElementById('myBeep');
-//     let sixtyMinuteAudio = document.getElementById('60minute');
-//     beep.play();
-//     sixtyMinuteAudio.play();
-// }
-
-// function playNinetyMinute() {
-//     let beep = document.getElementById('myBeep');
-//     let ninetyMinuteAudio = document.getElementById('90minute');
-//     beep.play();
-//     ninetyMinuteAudio.play();
-// }
-
-// function playHundredTwentyMinute() {
-//     let beep = document.getElementById('myBeep');
-//     let hundredTwentyMinuteAudio = document.getElementById('120minute');
-//     beep.play();
-//     hundredTwentyMinuteAudio.play();
-// }
 let lastEvent;
 
 function playAudio(time) {
@@ -92,46 +37,11 @@ function myFunction() {
 
         // Time calculations for days, hours, minutes and seconds and
         // Output the result in an element with id="demo"
-        // let {hours, minutes, seconds} = calcTime(distance);
-        // document.getElementById('demo').innerHTML = hours + 'h ' + minutes + 'm ' + seconds + 's ';
         updateClock(calcTime(distance));
 
-        playAudio(time/60);
-        
-        // if (time / 60 === .1) {
-        //     // playOneMinute();
-        //     testAudio(1);
-        // }
-
-        // if (time / 60 === 5) {
-        //     // playFiveMinute();
-        //     testAudio(5);
-        // }
-
-        // if (time / 60 === 10) {
-        //     playTenMinute();
-        // }
-
-        // if (time / 60 === 15) {
-        //     playFifteenMinute();
-        // }
-
-        // if (time / 60 === 30) {
-        //     playThirtyMinute();
-        // }
-
-        // if (time / 60 === 60) {
-        //     playSixtyMinute();
-        // }
-
-        // if (time / 60 === 90) {
-        //     playNinetyMinute();
-        // }
-
-        // if (time / 60 === 120) {
-        //     playHundredTwentyMinute();
-        // }
-
+        //play appropriate recording based on elapsed time.
+        playAudio(time/5);
+  
         time++;
 
        
