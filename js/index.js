@@ -74,6 +74,10 @@ function calcTime(milliseconds) {
     };
 }
 
+function updateClock({hours, minutes, seconds}) {
+    document.getElementById('demo').innerHTML = hours + 'h ' + minutes + 'm ' + seconds + 's ';  
+}
+
 function myFunction() {
     let countDownDate = new Date();
     let time = 1;
@@ -88,8 +92,9 @@ function myFunction() {
 
         // Time calculations for days, hours, minutes and seconds and
         // Output the result in an element with id="demo"
-        let {hours, minutes, seconds} = calcTime(distance);
-        document.getElementById('demo').innerHTML = hours + 'h ' + minutes + 'm ' + seconds + 's ';
+        // let {hours, minutes, seconds} = calcTime(distance);
+        // document.getElementById('demo').innerHTML = hours + 'h ' + minutes + 'm ' + seconds + 's ';
+        updateClock(calcTime(distance));
 
         playAudio(time/60);
         
