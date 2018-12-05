@@ -1,11 +1,12 @@
 'use strict';
 
 let lastEvent;
+let beep = document.getElementById('myBeep');
 
 function playAudio(time) {
-    let beep = document.getElementById('myBeep');
     let audio = document.getElementById(`${time}minute`)? document.getElementById(`${time}minute`) : null;
-    if (audio) {
+    if (audio && lastEvent !== `${time}minute`) {
+        lastEvent = `${time}minute`;
         beep.play();
         audio.play();
     }
@@ -25,7 +26,7 @@ function updateClock({hours, minutes, seconds}) {
 
 function myFunction() {
     let countDownDate = new Date();
-    let time = 1;
+    // let time = 1;
     // Update the count down every 1 second
     let x = setInterval(function () {
 
@@ -40,10 +41,9 @@ function myFunction() {
         updateClock(calcTime(distance));
 
         //play appropriate recording based on elapsed time.
-        playAudio(time/5);
+        playAudio(Math.floor(distance/60000));
   
-        time++;
-
+        // time++;
        
-    }, 1000);
+    }, 333);
 }
