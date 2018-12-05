@@ -1,15 +1,14 @@
 'use strict';
 
-let lastEvent;
 let beep = document.getElementById('myBeep');
+let events = [1, 5, 10, 15, 30, 60, 90, 120];
+let x;
 
 function playAudio(time) {
-    let audio = document.getElementById(`${time}minute`)? document.getElementById(`${time}minute`) : null;
-    if (audio && lastEvent !== `${time}minute`) {
-        lastEvent = `${time}minute`;
-        beep.play();
-        audio.play();
-    }
+    let audio = document.getElementById(`${time}minute`);
+    beep.play();
+    audio.play();
+    events = events.slice(1);
 }
 
 function calcTime(milliseconds) {
@@ -24,11 +23,22 @@ function updateClock({hours, minutes, seconds}) {
     document.getElementById('demo').innerHTML = hours + 'h ' + minutes + 'm ' + seconds + 's ';  
 }
 
+function toggleStartButton(status) {
+    document.getElementById('startButton').disabled = status;
+}
+
+function reset() {
+    clearInterval(x);
+    updateClock(calcTime(0));
+    toggleStartButton(false);
+}
+
 function myFunction() {
+    toggleStartButton(true);
     let countDownDate = new Date();
-    // let time = 1;
+
     // Update the count down every 1 second
-    let x = setInterval(function () {
+    x = setInterval(function () {
 
         // Get todays date and time
         let now = new Date().getTime();
@@ -41,9 +51,9 @@ function myFunction() {
         updateClock(calcTime(distance));
 
         //play appropriate recording based on elapsed time.
-        playAudio(Math.floor(distance/60000));
-  
-        // time++;
+        if (Math.floor(distance/60000) === events[0]) {
+            playAudio(events[0]);
+        }
        
     }, 333);
 }
