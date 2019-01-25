@@ -6,6 +6,8 @@ let x;
 
 function playAudio(time) {
     let audio = document.getElementById(`${time}minute`);
+    beep.load();
+    audio.load();
     beep.play();
     audio.play();
     events = events.slice(1);
@@ -13,14 +15,14 @@ function playAudio(time) {
 
 function calcTime(milliseconds) {
     return {
-        hours : Math.floor((milliseconds % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
-        minutes : Math.floor((milliseconds % (1000 * 60 * 60)) / (1000 * 60)),
-        seconds : Math.floor((milliseconds % (1000 * 60)) / 1000),
+        hours: Math.floor((milliseconds % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
+        minutes: Math.floor((milliseconds % (1000 * 60 * 60)) / (1000 * 60)),
+        seconds: Math.floor((milliseconds % (1000 * 60)) / 1000),
     };
 }
 
-function updateClock({hours, minutes, seconds}) {
-    document.getElementById('demo').innerHTML = hours + 'h ' + minutes + 'm ' + seconds + 's ';  
+function updateClock({ hours, minutes, seconds }) {
+    document.getElementById('demo').innerHTML = hours + 'h ' + minutes + 'm ' + seconds + 's ';
 }
 
 function toggleStartButton(status) {
@@ -51,9 +53,9 @@ function myFunction() {
         updateClock(calcTime(distance));
 
         //play appropriate recording based on elapsed time.
-        if (Math.floor(distance/60000) === events[0]) {
+        if (Math.floor(distance / 60000) === events[0]) {
             playAudio(events[0]);
         }
-       
+
     }, 333);
 }
