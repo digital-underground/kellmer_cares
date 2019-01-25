@@ -5,11 +5,14 @@ let events = [1, 5, 10, 15, 30, 60, 90, 120];
 let x;
 
 function playAudio(time) {
-    let audio = document.getElementById(`${time}minute`);
-    beep.load();
-    audio.load();
-    beep.play();
-    audio.play();
+    // let audio = document.getElementById(`${time}minute`);
+    // beep.play();
+    // audio.play();
+    let soundFile = new Element("audio", { id: "${time}minute", src: "../data/${time}_minute.mp3", controls: "" });
+    document.body.appendChild(this.soundFile);
+    this.soundFile.load();
+    this.soundFile.play();
+
     events = events.slice(1);
 }
 
