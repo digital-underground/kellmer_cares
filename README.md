@@ -34,3 +34,7 @@ Start
   - Check Blood pressure
   - Give IV medications
   - Start IV fluids if not started at 30 minutes
+
+  # Web URL
+
+    http://ec2-35-161-112-19.us-west-2.compute.amazonaws.com/
