@@ -34,8 +34,48 @@ function reset() {
     toggleStartButton(false);
 }
 
+function addAudio() {
+    let audioContainer = document.getElementById('audio-container');
+    audioContainer.innerHTML = `
+    <audio id="1minute" source src="data/1_minute.mp3" type="audio/mp3" autostart="false">
+    </audio>
+
+    <audio id="5minute">
+        <source src="data/5_minutes.m4a" type="audio/mp4">
+    </audio>
+
+    <audio id="10minute">
+        <source src="data/10_minutes.m4a" type="audio/mp4">
+    </audio>
+
+    <audio id="15minute">
+        <source src="data/15_minutes.m4a" type="audio/mp4">
+    </audio>
+
+    <audio id="30minute">
+        <source src="data/30_minutes.m4a" type="audio/mp4">
+    </audio>
+
+    <audio id="60minute">
+        <source src="data/60_minutes.m4a" type="audio/mp4">
+    </audio>
+
+    <audio id="90minute">
+        <source src="data/90_minutes.m4a" type="audio/mp4">
+    </audio>
+
+    <audio id="120minute">
+        <source src="data/120_minutes.m4a" type="audio/mp4">
+    </audio>
+
+    <audio id="myBeep">
+        <source src="data/beep.mp3" type="audio/mp4">
+    `;
+}
+
 function myFunction() {
     toggleStartButton(true);
+    addAudio();
     let countDownDate = new Date();
 
     // Update the count down every 1 second
