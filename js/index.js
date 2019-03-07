@@ -12,8 +12,8 @@ let x;
 
 
 function playAudio(time) {
-    console.log(time)
     let audio = document.getElementById(`${time}minute`);
+    console.log(`${time}minute`)
     beep.play();
     audio.play();
     events = events.slice(1);
