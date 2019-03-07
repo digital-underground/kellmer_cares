@@ -83,7 +83,7 @@ function reset() {
 function myFunction() {
     toggleStartButton(true);
     // addAudio();
-    // beep.play();
+    beep.play();
     let countDownDate = new Date();
 
     // Update the count down every 1 second
