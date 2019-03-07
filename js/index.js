@@ -14,6 +14,7 @@ let x;
 function playAudio(time) {
     let audio = document.getElementById(`${time}minute`);
     console.log(`${time}minute`)
+    toggleStartButton(true);
     beep.play();
     audio.play();
     events = events.slice(1);
