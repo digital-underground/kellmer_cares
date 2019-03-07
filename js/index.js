@@ -81,9 +81,9 @@ function reset() {
 // }
 
 function myFunction() {
-    toggleStartButton(true);
+    // toggleStartButton(true);
     // addAudio();
-    beep.play();
+    // beep.play();
     let countDownDate = new Date();
 
     // Update the count down every 1 second
@@ -101,6 +101,7 @@ function myFunction() {
 
         //play appropriate recording based on elapsed time.
         if (Math.floor(distance / 5000) === events[0]) {
+            toggleStartButton(true);
             playAudio(events[0]);
             // beep.play();
             // events = events.slice(1);
