@@ -157,5 +157,8 @@ text {
 
 #demo {
 	display: block;
+}
 
+.audiojs {
+	display: None;
 }
