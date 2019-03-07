@@ -12,7 +12,7 @@ let x;
 
 
 function playAudio(time) {
-
+    console.log(time)
     let audio = document.getElementById(`${time}minute`);
     beep.play();
     audio.play();
@@ -100,9 +100,8 @@ function myFunction() {
         updateClock(calcTime(distance));
 
         //play appropriate recording based on elapsed time.
-        if (Math.floor(distance / 10000) === events[0]) {
+        if (Math.floor(distance / 60000) === events[0]) {
             playAudio(events[0]);
-            // console.log(distance / 10000);
             // beep.play();
             // events = events.slice(1);
         }
