@@ -4,20 +4,20 @@ let beep = document.getElementById('myBeep');
 let events = [1, 5, 10, 15, 30, 60, 90, 120];
 let x;
 
-beep.addEventListener('ended', () => {
-    console.log('i fired');
-    beep.src = `data/${events[0]}_minutes.m4a`;
-    beep.load();
-});
+// beep.addEventListener('ended', () => {
+//     console.log('i fired');
+//     beep.src = `data/${events[0]}_minutes.m4a`;
+//     beep.load();
+// });
 
 
-// function playAudio(time) {
+function playAudio(time) {
 
-//     let audio = document.getElementById(`${time}minute`);
-//     beep.play();
-//     audio.play();
-
-// }
+    let audio = document.getElementById(`${time}minute`);
+    beep.play();
+    audio.play();
+    events = events.slice(1);
+}
 
 function calcTime(milliseconds) {
     return {
@@ -83,7 +83,7 @@ function reset() {
 function myFunction() {
     toggleStartButton(true);
     // addAudio();
-    beep.play();
+    // beep.play();
     let countDownDate = new Date();
 
     // Update the count down every 1 second
@@ -101,10 +101,10 @@ function myFunction() {
 
         //play appropriate recording based on elapsed time.
         if (Math.floor(distance / 10000) === events[0]) {
-            // playAudio(events[0]);
-            console.log(distance / 10000);
-            beep.play();
-            events = events.slice(1);
+            playAudio(events[0]);
+            // console.log(distance / 10000);
+            // beep.play();
+            // events = events.slice(1);
         }
 
     }, 333);
