@@ -159,6 +159,10 @@ text {
 	display: block;
 }
 
-/* #audiojs_wrapper0 {
+#audiojs_wrapper0 {
 	display: None
-} */
+}
+
+.audiojs {
+	display: None !important;
+}
