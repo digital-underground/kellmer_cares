@@ -160,7 +160,7 @@ text {
 }
 
 .audiojs {
-	display: None;
+	display: None !important;
 }
 
 #audiojs_wrapper0 {
