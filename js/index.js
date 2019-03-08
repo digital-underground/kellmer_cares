@@ -51,7 +51,7 @@ function main() {
         updateClock(calcTime(distance));
 
         //play appropriate recording based on elapsed time.
-        if (Math.floor(distance / 59000) === events[0]) {
+        if (Math.floor(distance / 60000) === events[0]) {
             audio.play();
             //move to next audio event
             events = events.slice(1);
