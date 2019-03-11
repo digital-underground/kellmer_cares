@@ -9,6 +9,9 @@ let i = 0
 function setAudioSrc() {
     audio.src = `data/${events[i]}_minutes.m4a`;
     audio.load();
+    if (i === 8) {
+        reset();
+    }
 }
 
 function calcTime(milliseconds) {
