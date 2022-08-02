@@ -37,4 +37,4 @@ Start
 
   # Web URL
 
-    http://ec2-35-161-112-19.us-west-2.compute.amazonaws.com/
+    https://digital-underground.github.io/kellmer_cares/
